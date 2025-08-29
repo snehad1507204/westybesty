@@ -26,7 +26,7 @@ function GreenWasty() {
     return (
         <div className="greenwasty">
             {/* Hero Section */}
-            <header className="hero">
+            <header className="greenwasty-hero">
                 <h1>GreenWasty — Turn Green Waste into Everyday Wonders</h1>
                 <p>Simple guides, DIY kits, and real impact from your kitchen & garden waste.</p>
                 <div className="hero-buttons">

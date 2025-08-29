@@ -18,27 +18,58 @@ body {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  margin-top: 50px;
 }
 
 /* Hero Section */
-.hero {
+.greenwasty-hero {
+  display: flex;
+  flex-direction: column; /* Stack heading, paragraph, and buttons vertically */
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 60px 20px;
   background-image: url('https://thumbs.dreamstime.com/b/full-container-organic-green-waste-kitchen-different-fruits-vegetables-home-gardening-reusing-composting-process-to-388301430.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
   color: #fff;
+  min-height: 400px;
+  gap: 15px; /* spacing between elements */
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+.greenwasty-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.greenwasty-hero p {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 600px;
 }
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .greenwasty-hero {
+    padding: 40px 15px;
+  }
+  .greenwasty-hero h1 {
+    font-size: 2rem;
+  }
+  .greenwasty-hero p {
+    font-size: 1rem;
+  }
+}
+
 
 .hero-buttons .btn {
   display: inline-block;
@@ -96,43 +127,51 @@ body {
   gap: 25px;
   flex-wrap: wrap;
   margin-bottom: 40px;
+  padding: 0 10px; /* small padding for better spacing on mobile */
 }
 
 .feature-card {
-  background: white;
-  padding: 20px;
+  background: #fff;
+  padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  width: 280px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  width: 240px;  /* Balanced width */
+  height: 310px; /* Uniform height */
   text-align: center;
   transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .feature-card img {
-  display: block;           /* Removes inline spacing */
   width: 100%;
-  height: 150px;            /* Half of card height */
+  height: 130px;
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  margin: 0;                /* No margin */
-  padding: 0;               /* No padding */
+  border-radius: 8px;
 }
 
 .feature-card h3 {
+  margin: 12px 0 8px;
+  font-size: 1.1rem;
   color: #2e7d32;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
 }
 
 .feature-card p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #666;
+  padding: 0 6px;
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 
 .benefits {
   display: flex;
@@ -235,3 +274,72 @@ body {
   font-weight: bold;
 }
 
+/* Responsive Design */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .intro-features,
+  .diy-list,
+  .counter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .feature-card,
+  .diy-card {
+    width: 45%;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .feature-card,
+  .diy-card {
+    width: 100%;
+  }
+
+  .intro-features,
+  .diy-list,
+  .counter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .greenwasty {
+    width: 95%;
+    padding: 15px;
+  }
+}
+
+/* Extra Small Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.6rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .feature-card img {
+    height: 120px;
+  }
+}
